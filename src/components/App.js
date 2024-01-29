@@ -9,6 +9,7 @@ import ContactList from './ContactList';
 import ContactDetail from './ContactDetail';
 import DeleteContact from './DeleteContact';
 import EditContact from './EditContact';
+import NotFound from './NotFound';
 
 function App() {
   // const contacts = [
@@ -99,6 +100,7 @@ function App() {
               <Route path='/edit/:id' element={ <EditContact updateContactHandler={updateContactHandler} /> } />
               <Route path='/delete/:id' element={ <DeleteContact contacts={contacts} getContactId={removeContactHandler} /> } />
               <Route path='/contact/:id' Component={ ContactDetail }/>
+              <Route path='/*' element={ <NotFound /> }/>
             </Routes>
             
             {/* <ContactList contacts={contacts} getContactId = {removeContactHandler}/> */}
