@@ -1,6 +1,6 @@
 # ContactApp
 Description : <br>
-&nbsp;&nbsp;The aim of the project is to make the user to do all the CRUD operations on contacts and in addition to that one can also search for particular contact
+&nbtp;&nbtp;The aim of the project is to make the user to do all the CRUD operations on contacts and in addition to that one can also search for particular contact
 
 Installation : 
 1. Just need to check the availability of npm in your coding platform and install it.  
