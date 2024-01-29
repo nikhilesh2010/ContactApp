@@ -5,10 +5,10 @@ Installation :
 1. Just need to check the availability of npm in your coding platform and install it.  
 2. In addition to the above, download the repo [server-api](https://github.com/nikhilesh2010/server-api.git) as the server to store contacts.
 
-Usage : 
+Usage : <br>
 When you run using npm run in the terminal it gets started and can store the contacts
 
-Contributing : 
+Contributing : <br>
 By adding the additional features, one can contribute with proper description of the PR.
 
 Credits : @nikhilesh2010
