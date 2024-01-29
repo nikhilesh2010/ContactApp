@@ -1,3 +1,16 @@
+# ContactApp
+Description : The aim of the project is to make the user to do all the CRUD operations on contacts and in addition to that one can also search for particular contact
+
+Installation : Just need to check the availability of npm in your coding platform and install it.  
+               In addition to the above, download the repo [server-api]() as the server to store contacts.
+
+Usage : When you run using npm run in the terminal it gets started and can store the contacts
+
+Contributing : By adding the additional features, one can contribute with proper description of the PR.
+
+Credits : @nikhilesh2010
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
