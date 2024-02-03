@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { v4 } from 'uuid';
 import './App.css';
-import api from '../api/contacts';
+// import api from '../api/contacts';
 import Header from "./Header";
 import AddContact from './AddContact'
 import ContactList from './ContactList';
