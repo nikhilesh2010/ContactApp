@@ -24,29 +24,37 @@ function App() {
   //     email : "nikhilesh@mail.com"
   //   },
   // ];
-  // const LOCAL_STORAGE_KEY = "contacts";
+  const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState("");
   
   const addContactHandler = async (contact) => {
     console.log(contact);
-    // setContacts([...contacts, {id: v4(), ...contact}]);
+    setContacts([...contacts, {id: v4(), ...contact}]);
+    /* ------ Using api -------
     const request = { id: v4(), ...contact }
     const response = await api.post('/contacts', request);
     setContacts([...contacts, response.data]);
-    
+    */
   };
   const updateContactHandler = async (contact) => {
+    const updatedContacts = contacts.map((c) => (c.id === contact.id ? { ...c, ...contact } : c));
+    setContacts(updatedContacts);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedContacts));
+    /* ------ Using api -------
     const response = await api.put(`/contacts/${contact.id}`, contact);
     const { id } = response.data
     setContacts(contacts.map((contact) => {
       return contact.id === id ? {...response.data} : contact
     }))
+    */
   };
   
   const removeContactHandler = async (id) => {
-    await api.delete(`/contacts/${id}`);
+    /* ------ Using api -------
+     await api.delete(`/contacts/${id}`);
+    */
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });
@@ -59,7 +67,6 @@ function App() {
     if (searchTerm !== ""){
       const newContactList = contacts.filter((contact) => {
         return Object.values(contact).join(" ").toLowerCase().includes(searchTerm.toLowerCase());
-        // return Object.values(contact)
       });
       setSearchResults(newContactList);
     }
@@ -68,25 +75,28 @@ function App() {
     }
   };
 
+  /* ------ Using api -------
   // Retrive Contacts
   const retriveContacts = async() => {
     const response = await api.get("/contacts")
     return response.data;
   }
-
+  */
   useEffect(() => {
-    // const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    // // console.log(retriveContacts);
-    // if (retriveContacts) setContacts(retriveContacts);
+    const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    // console.log(retriveContacts);
+    if (retriveContacts) setContacts(retriveContacts);
+    /* ------ Using api -------
     const getAllContacts = async () => {
       const allContacts =await retriveContacts();
       if (allContacts) setContacts(allContacts);
     }
     getAllContacts();
+    */
   }, []);
 
   useEffect(() => {
-    // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
   
   return (
