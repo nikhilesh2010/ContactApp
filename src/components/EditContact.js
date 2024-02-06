@@ -9,6 +9,7 @@ const EditContact = (props) => {
         id: "",
         name: "",
         email: "",
+        phone: "",
     });
     useEffect(() => {
         const { contact } = location.state;
@@ -16,6 +17,7 @@ const EditContact = (props) => {
             id: contact.id,
             name: contact.name,
             email: contact.email,
+            phone: contact.phone,
         });
     }, [location.state]);
 
@@ -26,7 +28,7 @@ const EditContact = (props) => {
             return;
         }
         props.updateContactHandler(state);
-        setState({ name: "", email: "" });
+        setState({ name: "", email: "", phone: "" });
         navigate('/');
     };
 
