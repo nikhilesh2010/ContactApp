@@ -6,6 +6,7 @@ const AddContact = (props) => {
     const [state, setState] = useState({
         name: "",
         email: "",
+        phone: "",
     });
 
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const AddContact = (props) => {
             return;
         }
         props.addContactHandler(state);
-        setState({ name: "", email: "" });
+        setState({ name: "", email: "", phone: "" });
         navigate('/');
     };
 
@@ -44,6 +45,15 @@ const AddContact = (props) => {
                     type="email" name="email" placeholder="Email" 
                     value={state.email} 
                     onChange={(e) => setState({...state,email: e.target.value})} 
+                />
+            </div>
+            <div className="field">
+                <label>Phone</label>
+                <input 
+                    type="text" name="phone" placeholder="Phone Number" 
+                    value={state.phone} 
+                    onChange={(e) => setState({...state,phone: e.target.value})}
+                    pattern="[0-9]*" 
                 />
             </div>
             <button className="ui button blue">Add</button>

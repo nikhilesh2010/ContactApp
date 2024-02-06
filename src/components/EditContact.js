@@ -55,6 +55,15 @@ const EditContact = (props) => {
                     onChange={(e) => setState({...state,email: e.target.value})} 
                 />
             </div>
+            <div className="field">
+                <label>Phone</label>
+                <input 
+                    type="text" name="phone" placeholder="Phone Number" 
+                    value={state.phone} 
+                    onChange={(e) => setState({...state,phone: e.target.value})} 
+                    pattern="[0-9]*"
+                />
+            </div>
             <button className="ui button blue">Update</button>
         </form>
         </div>

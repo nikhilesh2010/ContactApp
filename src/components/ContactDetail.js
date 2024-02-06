@@ -15,7 +15,8 @@ const ContactDetail = _ => {
                 </div>
                 <div className="content">
                     <div className="header">{state.contact.name}</div>
-                    <div className="description">{state.contact.email}</div>
+                    <div className="description"><b>Mail:</b>&nbsp;{state.contact.email}</div>
+                    <div className="description"><b>Phone:</b>&nbsp;{state.contact.phone}</div>
                 </div>
             </div>
             <div className="ui center aligned container">

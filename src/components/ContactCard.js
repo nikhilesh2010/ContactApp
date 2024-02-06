@@ -3,7 +3,7 @@ import user from "../images/user.png";
 import { Link } from "react-router-dom";
 
 const ContactCard = (props) => {
-    const {id, name, email} = props.contact
+    const {id, name, email, phone} = props.contact
     let detail = props.contact
     // console.log(detail)
 
@@ -12,8 +12,9 @@ const ContactCard = (props) => {
             <img className="ui avatar image" src={user} alt="user"></img>
             <div className="content" >
                 <Link to={`/contact/${id}`} state={{ contact: detail }} >
-                    <div className="header">{name}</div>
-                    <div>{email}</div>
+                    <div className="header"><h3>{name}</h3></div>
+                    <div><b>Mail:</b>&nbsp;{email}</div>
+                    <div><b>Phone:</b>&nbsp;{phone}</div>
                 </Link>
             </div>
             <Link to={`/delete/${id}`} state={{contact: detail}}>
